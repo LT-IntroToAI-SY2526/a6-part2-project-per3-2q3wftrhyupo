@@ -3,7 +3,7 @@ Multivariable Linear Regression Project
 Assignment 6 Part 3
 
 Group Members:
-- 
+- Oscar
 - 
 - 
 - 
