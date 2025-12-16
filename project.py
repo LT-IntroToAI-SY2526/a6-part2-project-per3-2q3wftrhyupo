@@ -92,29 +92,36 @@ def visualize_data(data):
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     """PREVIOUS SCORES"""
 
-    axes[0, 0].scatter(data['Previous Scores'], data['Performance'], color='yellow', alpha=0.6)
-    axes[0, 0].set_xlabel('Previous Scores (#)')
-    axes[0, 0].set_ylabel('Performance (#)')
-    axes[0, 0].set_title('Previous Scores vs Performance')
-    axes[0, 0].grid(True, alpha=0.3)
+    axes[0, 1].scatter(data['Previous Scores'], data['Performance'], color='yellow', alpha=0.6)
+    axes[0, 1].set_xlabel('Previous Scores (#)')
+    axes[0, 1].set_ylabel('Performance (#)')
+    axes[0, 1].set_title('Previous Scores vs Performance')
+    axes[0, 1].grid(True, alpha=0.3)
 
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     """SLEEP HOURS"""
 
-    axes[0, 0].scatter(data['Sleep Hours'], data['Performance'], color='green', alpha=0.6)
-    axes[0, 0].set_xlabel('Sleep Hours (#)')
-    axes[0, 0].set_ylabel('Performance (#)')
-    axes[0, 0].set_title('Sleep Hours vs Performance')
-    axes[0, 0].grid(True, alpha=0.3)
+    axes[1, 0].scatter(data['Sleep Hours'], data['Performance'], color='green', alpha=0.6)
+    axes[1, 0].set_xlabel('Sleep Hours (#)')
+    axes[1, 0].set_ylabel('Performance (#)')
+    axes[1, 0].set_title('Sleep Hours vs Performance')
+    axes[1, 0].grid(True, alpha=0.3)
 
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    """SLEEP HOURS"""
+    """QUESTIONS PRACTICED"""
 
-    axes[0, 0].scatter(data['Sleep Hours'], data['Performance'], color='green', alpha=0.6)
-    axes[0, 0].set_xlabel('Sleep Hours (#)')
-    axes[0, 0].set_ylabel('Performance (#)')
-    axes[0, 0].set_title('Sleep Hours vs Performance')
-    axes[0, 0].grid(True, alpha=0.3)
+    axes[1, 1].scatter(data['Sample Question Papers Practiced'], data['Performance'], color='blue', alpha=0.6)
+    axes[1, 1].set_xlabel('Sample Question Papers Practiced (#)')
+    axes[1, 1].set_ylabel('Performance (#)')
+    axes[1, 1].set_title('Sample Question Papers Practiced vs Performance')
+    axes[1, 1].grid(True, alpha=0.3)
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    plt.tight_layout()
+    plt.savefig('performance_index.png', dpi=300, bbox_inches='tight')
+    print("\n✓ Feature plots saved as 'performance_index.png'")
+    plt.show()
 
 
 def prepare_and_split_data(data):
