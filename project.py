@@ -39,7 +39,7 @@ def load_and_explore_data(filename):
     print("=" * 70)
     
     # =-=-=-=-=-=-=--==-=-=-=-=-=-=-=-=-=-=-=-
-    
+
     data = pd.read_csv(filename)
     
     print("=== Student Performance Data ===")
@@ -77,7 +77,44 @@ def visualize_data(data):
     # Your code here
     # Hint: Use subplots like in Part 2!
     
-    pass
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    fig.suptitle('External Factors vs Performance', fontsize=16, fontweight='bold')
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    """HOURS STUDIED"""
+
+    axes[0, 0].scatter(data['Hours Studied'], data['Performance'], color='red', alpha=0.6)
+    axes[0, 0].set_xlabel('Hours Studied (#)')
+    axes[0, 0].set_ylabel('Performance (#)')
+    axes[0, 0].set_title('Hours Studied vs Performance')
+    axes[0, 0].grid(True, alpha=0.3)
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    """PREVIOUS SCORES"""
+
+    axes[0, 0].scatter(data['Previous Scores'], data['Performance'], color='yellow', alpha=0.6)
+    axes[0, 0].set_xlabel('Previous Scores (#)')
+    axes[0, 0].set_ylabel('Performance (#)')
+    axes[0, 0].set_title('Previous Scores vs Performance')
+    axes[0, 0].grid(True, alpha=0.3)
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    """SLEEP HOURS"""
+
+    axes[0, 0].scatter(data['Sleep Hours'], data['Performance'], color='green', alpha=0.6)
+    axes[0, 0].set_xlabel('Sleep Hours (#)')
+    axes[0, 0].set_ylabel('Performance (#)')
+    axes[0, 0].set_title('Sleep Hours vs Performance')
+    axes[0, 0].grid(True, alpha=0.3)
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    """SLEEP HOURS"""
+
+    axes[0, 0].scatter(data['Sleep Hours'], data['Performance'], color='green', alpha=0.6)
+    axes[0, 0].set_xlabel('Sleep Hours (#)')
+    axes[0, 0].set_ylabel('Performance (#)')
+    axes[0, 0].set_title('Sleep Hours vs Performance')
+    axes[0, 0].grid(True, alpha=0.3)
 
 
 def prepare_and_split_data(data):
