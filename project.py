@@ -5,7 +5,7 @@ Assignment 6 Part 3
 Group Members:
 - Oscar
 - 
-- 
+- wdadwadwad
 - 
 
 Dataset: [Student Performance]
