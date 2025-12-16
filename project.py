@@ -145,9 +145,28 @@ def prepare_and_split_data(data):
     print("PREPARING AND SPLITTING DATA")
     print("=" * 70)
     
-    # Your code here
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=
+
+    feature_columns = ['Hours Studied', 'Previous Scores', 'Sleep Hours', 'Sample Question Papers Practiced']
+
+    X = data[feature_columns]
+    y = data['Performance']
+
+    print(f"\n=== Feature Preparation ===")
+    print(f"Features (X) shape: {X.shape}")
+    print(f"Target (y) shape: {y.shape}")
     
-    pass
+    print(f"\nFeature columns: {list(X.columns)}")
+
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2, random_state=42)
+
+    print(f"\n=== Data Split (Matching Unplugged Activity) ===")
+    print(f"Training set: {len(X_train)} samples")
+    print(f"Testing set: {len(X_test)} samples")
+
+    return X_train, X_test, y_train, y_test
 
 
 def train_model(X_train, y_train):
