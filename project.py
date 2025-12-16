@@ -8,9 +8,9 @@ Group Members:
 - 
 - 
 
-Dataset: [Name of your dataset]
-Predicting: [What you're predicting]
-Features: [List your features]
+Dataset: [Student Performance]
+Predicting: [The performance of a student based on external factors]
+Features: [Hours studied, past scores, hours slept and questions practiced]
 """
 
 import pandas as pd
