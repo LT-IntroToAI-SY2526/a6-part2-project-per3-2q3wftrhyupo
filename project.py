@@ -4,9 +4,6 @@ Assignment 6 Part 3
 
 Group Members:
 - Oscar
-- 
-- wdadwadwad
-- 
 
 Dataset: [Student Performance]
 Predicting: [The performance of a student based on external factors]
@@ -246,7 +243,7 @@ def evaluate_model(model, X_test, y_test, feature_names):
     print(f"R² Score: {r2:.4f}")
     print(f"  → Model explains {r2*100:.2f}% of performance variation")
 
-    print(f"\nRoot Mean Squared Error: ${rmse:.2f}")
+    print(f"\nRoot Mean Squared Error: {rmse:.2f}%")
     print(f"  → On average, predictions are off by {rmse:.2f}")
 
     print(f"\n=== Feature Importance ===")
@@ -277,12 +274,14 @@ def make_prediction(model):
     print("EXAMPLE PREDICTION")
     print("=" * 70)
     
-    # Your code here
-    # Example: If predicting house price with [sqft, bedrooms, bathrooms]
-    # sample = pd.DataFrame([[2000, 3, 2]], columns=feature_names)
-    
-    pass
+    performance = pd.DataFrame([[6, 96, 9, 0]], columns=['Hours Studied', 'Previous Scores', 'Sleep Hours', 'Sample Question Papers Practiced'])
+    predicted_performance = model.predict(performance)[0]
 
+    print(f"\n=== New Prediction ===")
+    print(f"Student specs: {6} hours studied, {75} previous score, {7} hours slept, {10} papers practiced")
+    print(f"Predicted performance: {predicted_performance:.2f}")
+
+    return predicted_performance
 
 if __name__ == "__main__":
     # Step 1: Load and explore
