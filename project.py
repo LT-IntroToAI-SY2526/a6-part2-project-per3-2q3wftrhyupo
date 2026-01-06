@@ -243,7 +243,7 @@ def evaluate_model(model, X_test, y_test, feature_names):
     print(f"R² Score: {r2:.4f}")
     print(f"  → Model explains {r2*100:.2f}% of performance variation")
 
-    print(f"\nRoot Mean Squared Error: {rmse:.2f}%")
+    print(f"\nRoot Mean Squared Error: {rmse:.2f}")
     print(f"  → On average, predictions are off by {rmse:.2f}")
 
     print(f"\n=== Feature Importance ===")
@@ -278,7 +278,7 @@ def make_prediction(model):
     predicted_performance = model.predict(performance)[0]
 
     print(f"\n=== New Prediction ===")
-    print(f"Student specs: {6} hours studied, {75} previous score, {7} hours slept, {10} papers practiced")
+    print(f"Student specs: {6} hours studied, {96} previous score, {9} hours slept, {0} papers practiced")
     print(f"Predicted performance: {predicted_performance:.2f}")
 
     return predicted_performance
